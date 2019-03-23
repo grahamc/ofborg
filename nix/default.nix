@@ -1,5 +1,8 @@
 let
-  hostpkgs = builtins.fetchurl "https://github.com/NixOS/nixpkgs/archive/master.zip";
+  hostpkgs = builtins.fetchurl {
+    url = "https://github.com/NixOS/nixpkgs/archive/1dbbb021cd17c24bf4628ea663af7642272e4a39.tar.gz";
+    sha256 = "08frw2plmf9k9w1idj6kaysa1izijdfk7lr6gq3a8iqba7lvc65z";
+  };
   
   srcDef = builtins.fromJSON (builtins.readFile ./nixpkgs.json);
 
