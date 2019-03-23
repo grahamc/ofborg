@@ -1,6 +1,6 @@
 let
-  hostpkgs = import <nixpkgs> {};
-
+  hostpkgs = builtins.fetchurl "https://github.com/NixOS/nixpkgs/archive/master.zip";
+  
   srcDef = builtins.fromJSON (builtins.readFile ./nixpkgs.json);
 
   inherit (hostpkgs) fetchFromGitHub fetchpatch fetchurl;
